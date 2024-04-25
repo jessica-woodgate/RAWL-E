@@ -27,5 +27,3 @@ class EthicsModule():
                     self_in_min = True
         #returns the minimum days left to live, the agents in that list, and whether you are in that list
         return ordered_agents[-1].days_left_to_live, min_agents, self_in_min
-
-        test
