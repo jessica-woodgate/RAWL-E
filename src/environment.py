@@ -13,7 +13,7 @@ from .harvest_exception import NumAgentsException
 from os.path import exists
 
 class HarvestModel(Model):
-    def __init__(self,num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string=""):
+    def __init__(self,num_baseline,num_rawlsian,max_width,max_episodes,training,write_data,write_norms,file_string=""):
         super().__init__()
         self.num_baseline = num_baseline
         self.num_rawlsian = num_rawlsian
@@ -22,12 +22,13 @@ class HarvestModel(Model):
             raise NumAgentsException(">0", 0)
         self.end_day = 0
         self.schedule = RandomActivation(self)
-        self.max_width = 4
+        self.max_width = max_width
         self.max_height = 4
         self.grid = MultiGrid(self.max_width, self.max_height, False)
         self.max_days = 50
         self.max_episodes = max_episodes
         self.min_expl_prob = 0.01
+        self.min_epsilon = 0.01
         self.day = 1
         self.shared_replay_buffer = {"s": [], "a": [], "r": [], "s_": [], "done": []}
         self.agent_id = 0
@@ -97,7 +98,7 @@ class HarvestModel(Model):
                         a.days_survived = self.day
                     if self.write_norms and self.episode % 100 == 0:
                         self.append_norm_dictionary_to_file(a.norm_model.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
-                    if self.epsilon <= self.min_expl_prob + 0.001 and self.training: 
+                    if self.training: 
                         a.q_network.dqn.save(a.q_checkpoint_path)
                         a.target_network.dqn.save(a.target_checkpoint_path)
             self.reset()
@@ -179,6 +180,7 @@ class HarvestModel(Model):
         if self.write_data:
             if exists("data/results/agent_reports_"+self.file_string+".csv"):
                 raise FileExistsException("data/results/agent_reports_"+self.file_string+".csv")
+            self.agent_reporter.to_csv("data/results/agent_reports_"+self.file_string+".csv", mode='a')
 
     def collect_agent_data(self, agent):
         new_entry = pd.DataFrame({"agent_id": [agent.unique_id],

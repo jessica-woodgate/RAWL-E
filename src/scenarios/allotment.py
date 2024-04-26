@@ -4,9 +4,9 @@ from src.agent.harvest_agent import HarvestAgent
 
 class AllotmentHarvest(HarvestModel):
     def __init__(self,num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string=""):
-        super().__init__(num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string)
-        self.num_start_berries = 8
         self.max_width = 8
+        super().__init__(num_baseline,num_rawlsian,self.max_width,max_episodes,training,write_data,write_norms,file_string)
+        self.num_start_berries = 8
         #allocations is a nested dictionary with allotments for each agent (list of coordinates for max/min width/height) and berry allocation;
         self.allocations = {"agent_0": {
                                 "id": 0,
@@ -60,6 +60,7 @@ class AllotmentHarvest(HarvestModel):
         agent_coords = np.array([])
         berry_coords = np.zeros(((observer.max_width-observer.min_width), (observer.max_height-observer.min_height)))
         agent_days_left_to_live = np.array([])
+        #agent dictionary is ordered
         for a in self.schedule.agents:
             if a.unique_id == observer.unique_id:
                 continue
@@ -78,7 +79,6 @@ class AllotmentHarvest(HarvestModel):
         coords = np.append(observer_features, agent_coords)
         coords = np.append(coords, berry_coords)
         observation = np.append(coords, agent_days_left_to_live)
-        assert len(observation) == self.n_features
         return observation
     
     def get_n_features(self, max_width=0, max_height=0):

@@ -6,7 +6,7 @@ import pandas as pd
 import argparse
 
 def run_simulation(model_inst):
-    while (model_inst.training and model_inst.epsilon > model_inst.min_episilon) or (not model_inst.training and model_inst.episode <= model_inst.max_episodes):
+    while (model_inst.training and model_inst.epsilon > model_inst.min_epsilon) or (not model_inst.training and model_inst.episode <= model_inst.max_episodes):
         model_inst.episode
         model_inst.step()
     num_episodes = model_inst.episode
@@ -29,6 +29,14 @@ def create_and_run_model(scenario, agent_type, max_episodes, training, write_dat
         ValueError("Unknown argument: "+scenario)
     run_simulation(model_inst)
 
+def get_integer_input(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
 parser = argparse.ArgumentParser(description="Program options")
 parser.add_argument("option", choices=["test", "train", "generate_graphs"],
                     help="Choose the program operation")
@@ -39,24 +47,24 @@ if args.option not in ["test", "train", "generate_graphs"]:
 elif args.option == "test" or args.option == "train":
     if args.option == "test":
         scenario = input("What type of scenario do you want to run (capabilities, allotment): ")
-        if scenario not in ["capabilities", "allotment"]:
-            print("Invalid scenario. Please choose 'capabilities', or 'allotment'.")
+        while scenario not in ["capabilities", "allotment"]:
+            scenario = input("Invalid scenario. Please choose 'capabilities', or 'allotment': ")
     else:
         scenario = "basic"
     agent_type = input("What type of agent do you want to implement (baseline, rawlsian): ")
-    if agent_type not in ["baseline", "rawlsian"]:
-        print("Invalid agent type. Please choose 'baseline' or 'rawlsian'.")
+    while agent_type not in ["baseline", "rawlsian"]:
+        agent_type = input("Invalid agent type. Please choose 'baseline' or 'rawlsian': ")
     write_data = input("Do you want to write data to file? (y, n): ")
-    if write_data not in ["y", "n"]:
-        print("Invalid choice. Please choose 'y' or 'n'.")
+    while write_data not in ["y", "n"]:
+        write_data = input("Invalid choice. Please choose 'y' or 'n': ")
     if write_data == "y":
         write_data = True
         print("Data will be written into data/results.")
     elif write_data == "n":
         write_data = False
     write_norms = input("Do you want to write norms to file? (y, n): ")
-    if write_norms not in ["y", "n"]:
-        print("Invalid choice. Please choose 'y' or 'n'.")
+    while write_norms not in ["y", "n"]:
+        write_norms = input("Invalid choice. Please choose 'y' or 'n': ")
     if write_norms == "y":
         write_norms = True
         print("Norms will be written into data/results.")
@@ -64,12 +72,10 @@ elif args.option == "test" or args.option == "train":
         write_norms = False
     if args.option == "train":
         training = True
+        print("Model variables will be written into model_variables/current_run")
+        max_episodes = 0
     else:
-        max_episodes = input("How many episodes do you want to run: ")
-        try:
-            max_episodes = int(max_episodes)
-        except ValueError:
-            print("Please enter an integer.")
+        max_episodes = get_integer_input("How many episodes do you want to run: ")
         training = False
     file_string = scenario+"_"+agent_type
     create_and_run_model(scenario, agent_type, max_episodes, training, write_data, write_norms, file_string)

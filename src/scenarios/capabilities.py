@@ -3,7 +3,8 @@ from src.environment import HarvestModel
 
 class CapabilitiesHarvest(HarvestModel):
     def __init__(self,num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string=""):
-        super().__init__(num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string)
+        self.max_width = 4
+        super().__init__(num_baseline,num_rawlsian,self.max_width,max_episodes,training,write_data,write_norms,file_string)
         self.num_start_berries = 8
         self.allocations = {"agent_0": {
                                 "id": 0,
