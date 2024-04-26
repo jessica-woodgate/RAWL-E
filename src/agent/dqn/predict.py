@@ -1,5 +1,5 @@
 import numpy as np
-from agent.dqn.network import MyNetwork
+from .network import MyNetwork
 import tensorflow as tf
 from tensorflow import keras
 from keras import losses

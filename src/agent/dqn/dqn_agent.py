@@ -1,8 +1,7 @@
 from mesa import Agent
 import numpy as np
-from predict import DQN
+from .predict import DQN
 
-#https://towardsdatascience.com/deep-reinforcement-learning-build-a-deep-q-network-dqn-to-play-cartpole-with-tensorflow-2-and-gym-8e105744b998
 class DQNAgent(Agent):
     def __init__(self,unique_id,model,agent_type,actions,n_features,training,epsilon,shared_replay_buffer=None):
         super().__init__(unique_id, model)
@@ -20,8 +19,8 @@ class DQNAgent(Agent):
         self.type = agent_type
         self.current_reward = 0
         self.training = training
-        self.q_checkpoint_path = "data/model_variables/"+self.agent_type+"/agent_"+str(unique_id)+"/q_network"
-        self.target_checkpoint_path = "data/model_variables/"+self.agent_type+"/agent_"+str(unique_id)+"/target_network"
+        self.q_checkpoint_path = "model_variables/"+self.type+"/agent_"+str(unique_id)+"/q_model_variables"
+        self.target_checkpoint_path = "model_variables/"+self.type+"/agent_"+str(unique_id)+"/target_model_variables"
 
         self.hidden_units = round(((self.n_features/3) * 2) + (2 * self.n_actions))
         self.q_network = DQN(self.actions,self.n_features,self.training,checkpoint_path=self.q_checkpoint_path,shared_replay_buffer=self.shared_replay_buffer)

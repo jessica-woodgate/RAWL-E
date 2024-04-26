@@ -1,6 +1,6 @@
-from dqn.dqn_agent import DQNAgent
-from ethics_module import EthicsModule
-from norms_module import NormsModule
+from .dqn.dqn_agent import DQNAgent
+from .ethics_module import EthicsModule
+from .norms_module import NormsModule
 
 class HarvestAgent(DQNAgent):
     def __init__(self,unique_id,model,agent_type,min_width,max_width,min_height,max_height,n_features,training,epsilon,shared_replay_buffer=None):

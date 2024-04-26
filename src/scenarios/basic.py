@@ -1,10 +1,10 @@
 import numpy as np
-from environment import HarvestModel
+from src.environment import HarvestModel
 
 class BasicHarvest(HarvestModel):
-    def __init__(self,num_baseline,num_rawlsian,num_start_berries,training,file_string=""):
+    def __init__(self,num_baseline,num_rawlsian,training,file_string=""):
         super().__init__(num_baseline,num_rawlsian,training,file_string)
-        self.num_start_berries = num_start_berries
+        self.num_start_berries = 6
         self.init_agents(self.n_features)
         self.init_berries()
 

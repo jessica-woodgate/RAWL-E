@@ -4,12 +4,12 @@ from mesa.space import MultiGrid
 import pandas as pd
 import numpy as np
 import json
-from agent.harvest_agent import HarvestAgent
-from berry import Berry
-from harvest_exception import FileExistsException
-from harvest_exception import OutOfBounds
-from harvest_exception import NoEmptyCells
-from harvest_exception import NumAgentsException
+from .agent.harvest_agent import HarvestAgent
+from .berry import Berry
+from .harvest_exception import FileExistsException
+from .harvest_exception import OutOfBounds
+from .harvest_exception import NoEmptyCells
+from .harvest_exception import NumAgentsException
 from os.path import exists
 
 class HarvestModel(Model):
@@ -90,12 +90,11 @@ class HarvestModel(Model):
         if self.day >= self.max_days or self.num_living_agents <= 0:
             self.end_day = self.day
             if self.write_norms:
-                self.append_norm_dictionary_to_file(self.emerged_norms, "results/"+self.file_string+"_emerged_norms")
+                self.append_norm_dictionary_to_file(self.emerged_norms, "data/results/"+self.file_string+"_emerged_norms")
             for a in self.schedule.agents:
                 if a.type != "berry":
                     if a.off_grid == False:
                         a.days_survived = self.day
-                    self.collect_agent_episode_data(a)
                     if self.write_norms and self.episode % 100 == 0:
                         self.append_norm_dictionary_to_file(a.norm_model.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
                     if self.epsilon <= self.min_expl_prob + 0.001 and self.training: 
@@ -178,8 +177,8 @@ class HarvestModel(Model):
                                "reward": [],
                                "num_norms": []})
         if self.write_data:
-            if exists("dqn_results/agent_reports"+self.file_string+".csv"):
-                raise FileExistsException("dqn_results/agent_reports"+self.file_string+".csv")
+            if exists("data/results/agent_reports_"+self.file_string+".csv"):
+                raise FileExistsException("data/results/agent_reports_"+self.file_string+".csv")
 
     def collect_agent_data(self, agent):
         new_entry = pd.DataFrame({"agent_id": [agent.unique_id],
@@ -195,7 +194,7 @@ class HarvestModel(Model):
                                "num_norms": [len(agent.norm_model.norm_base) if self.write_norms else None]})
         self.agent_reporter = pd.concat([self.agent_reporter, new_entry], ignore_index=True)
         if self.write_data:
-            new_entry.to_csv("results/agent_reports"+self.file_string+".csv", header=None, mode='a')
+            new_entry.to_csv("data/results/agent_reports_"+self.file_string+".csv", header=None, mode='a')
     
     def check_bounds(self, cell):
         if cell[0] >= 0 and cell[0] < self.max_width:

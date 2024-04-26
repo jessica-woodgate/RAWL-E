@@ -1,13 +1,22 @@
 import numpy as np
-from environment import HarvestModel
-from agent.harvest_agent import HarvestAgent
+from src.environment import HarvestModel
+from src.agent.harvest_agent import HarvestAgent
 
 class AllotmentHarvest(HarvestModel):
-    def __init__(self,num_baseline,num_rawlsian,num_start_berries,allocations,training,file_string=""):
-        super().__init__(num_baseline,num_rawlsian,training,file_string)
-        self.num_start_berries = num_start_berries
+    def __init__(self,num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string=""):
+        super().__init__(num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string)
+        self.num_start_berries = 8
+        self.max_width = 8
         #allocations is a nested dictionary with allotments for each agent (list of coordinates for max/min width/height) and berry allocation;
-        self.allocations = allocations
+        self.allocations = {"agent_0": {
+                                "id": 0,
+                                "berry_allocation": 6,
+                                "allotment": [0,4,0,self.max_height]},
+                            "agent_1": {
+                                "id": 1,
+                                "berry_allocation": 2,
+                                "allotment": [4,self.max_width,0,self.max_height]}
+                        }
         self.init_agents(self.n_features)
         self.init_berries()
 
