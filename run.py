@@ -1,9 +1,21 @@
 from src.scenarios.basic import BasicHarvest
 from src.scenarios.capabilities import CapabilitiesHarvest
 from src.scenarios.allotment import AllotmentHarvest
-import matplotlib.pyplot as plt
+import src.data_analysis as data_analysis
 import pandas as pd
 import argparse
+
+def generate_graphs(scenario):
+    path = "data/"+scenario+"/"
+    files = [path+"baseline.csv",path+"rawlsian.csv"]
+    labels = ["baseline", "rawlsian"]
+    dfs = []
+    for file in files:
+        df = pd.read_csv(file)
+        dfs.append(df)
+    data_analysis.display_violin_plot_df_list(dfs, labels, "day", "data/results/violin_end_day", "Violin Plot of Episode Length", "End Day")
+    data_analysis.display_violin_plot_df_list(dfs, labels, "total_berries", "data/results/violin_total_berries", "Violin Plot of Total Berries Consumed", "Berries Consumed")
+
 
 def run_simulation(model_inst):
     while (model_inst.training and model_inst.epsilon > model_inst.min_epsilon) or (not model_inst.training and model_inst.episode <= model_inst.max_episodes):
@@ -80,5 +92,8 @@ elif args.option == "test" or args.option == "train":
     file_string = scenario+"_"+agent_type
     create_and_run_model(scenario, agent_type, max_episodes, training, write_data, write_norms, file_string)
 elif args.option == "generate_graphs":
-  # Run your graph generation function here
-  pass
+    scenario = input("What type of scenario do you want to generate graphs for (capabilities, allotment): ")
+    while scenario not in ["capabilities", "allotment"]:
+        scenario = input("Invalid scenario. Please choose 'capabilities', or 'allotment': ")
+    print("Graphs will be saved in data/results")
+    generate_graphs(scenario)
