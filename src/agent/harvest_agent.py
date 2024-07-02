@@ -24,11 +24,11 @@ class HarvestAgent(DQNAgent):
         self.berry_health_payoff = 0.6
         self.low_health_threshold = 0.6
         self.type = agent_type
-        self.norm_model = NormsModule(model,self.unique_id)
+        self.norm_module = NormsModule(model,self.unique_id)
         self.norm_clipping_frequency = 10
         if agent_type == "rawlsian":
             self.rewards = self.get_rawlsian_rewards()
-            self.ethics_model = EthicsModule(model,self.unique_id,self.rewards["shaped_reward"])
+            self.ethics_module = EthicsModule(model,self.unique_id,self.rewards["shaped_reward"])
         else:
             self.rewards = self.get_baseline_rewards()
         self.off_grid = False
@@ -38,25 +38,25 @@ class HarvestAgent(DQNAgent):
         done = False
         self.current_action = action
         if self.model.write_norms:
-            self.norm_model.update_norm_age()
-            antecedent = self.norm_model.get_antecedent(self.health, self.berries)
+            self.norm_module.update_norm_age()
+            antecedent = self.norm_module.get_antecedent(self.health, self.berries)
         if self.type == "rawlsian":
             if self.berries > 0:
                 have_berries = True
             else:
                 have_berries = False
-            min_days_left, min_agents, self_in_min = self.ethics_model.get_social_welfare()
+            min_days_left, min_agents, self_in_min = self.ethics_module.get_social_welfare()
         reward, x, y = self.move(action)
         self.model.grid.move_agent(self, (x,y))
         reward += self.forage((x,y))
         next_state = self.model.observe(self)
         if self.type == "rawlsian":
-            reward += self.ethics_model.maximin(min_days_left, min_agents, self_in_min, have_berries)
+            reward += self.ethics_module.maximin(min_days_left, min_agents, self_in_min, have_berries)
         done, reward = self.update_attributes(reward)
         if self.model.write_norms:
-            self.norm_model.update_norm(antecedent, self.actions[action], reward)
+            self.norm_module.update_norm(antecedent, self.actions[action], reward)
             if self.model.day % self.norm_clipping_frequency == 0:
-                self.norm_model.clip_norm_base()
+                self.norm_module.clip_norm_base()
         return reward, next_state, done
     
     def move(self, action):

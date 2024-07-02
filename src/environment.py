@@ -97,7 +97,7 @@ class HarvestModel(Model):
                     if a.off_grid == False:
                         a.days_survived = self.day
                     if self.write_norms and self.episode % 100 == 0:
-                        self.append_norm_dictionary_to_file(a.norm_model.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
+                        self.append_norm_dictionary_to_file(a.norm_module.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
                     if self.training: 
                         a.q_network.dqn.save(a.q_checkpoint_path)
                         a.target_network.dqn.save(a.target_checkpoint_path)
@@ -108,7 +108,7 @@ class HarvestModel(Model):
         emerged_norms = {}
         for agent in self.schedule.agents:
             if agent.type != "berry":
-                for norm_name, norm_value in agent.norm_model.norm_base.items():
+                for norm_name, norm_value in agent.norm_module.norm_base.items():
                     if norm_name not in emerged_norms:
                         emerged_norms[norm_name] = {"score": 0,
                                                     "numerosity": 0,
@@ -153,7 +153,7 @@ class HarvestModel(Model):
                 a.current_reward = 0
                 a.days_left_to_live = a.get_days_left_to_live()
                 a.days_survived = 0
-                a.norm_model.norm_base  = {}
+                a.norm_module.norm_base  = {}
                 self.place_agent_in_allotment(a)
                 a.off_grid = False
                 self.living_agents.append(a)
@@ -193,7 +193,7 @@ class HarvestModel(Model):
                                "days_left_to_live": [agent.days_left_to_live],
                                "action": [agent.current_action],
                                "reward": [agent.current_reward],
-                               "num_norms": [len(agent.norm_model.norm_base) if self.write_norms else None]})
+                               "num_norms": [len(agent.norm_module.norm_base) if self.write_norms else None]})
         self.agent_reporter = pd.concat([self.agent_reporter, new_entry], ignore_index=True)
         if self.write_data:
             new_entry.to_csv("data/results/agent_reports_"+self.file_string+".csv", header=None, mode='a')
