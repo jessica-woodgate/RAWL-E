@@ -24,8 +24,8 @@ class DQNAgent(Agent):
             self.q_checkpoint_path = "model_variables/current_run/"+self.agent_type+"/agent_"+str(unique_id)+"/q_model_variables"
             self.target_checkpoint_path = "model_variables/current_run/"+self.agent_type+"/agent_"+str(unique_id)+"/target_model_variables"
         else:
-            self.q_checkpoint_path = "model_variables/"+self.agent_type+"/agent_"+str(unique_id)+"/q_model_variables"
-            self.target_checkpoint_path = "model_variables/"+self.agent_type+"/agent_"+str(unique_id)+"/target_model_variables"
+            self.q_checkpoint_path = "model_variables/current_run/"+self.agent_type+"/agent_"+str(unique_id)+"/q_model_variables"
+            self.target_checkpoint_path = "model_variables/current_run/"+self.agent_type+"/agent_"+str(unique_id)+"/target_model_variables"
 
         self.hidden_units = round(((self.n_features/3) * 2) + (2 * self.n_actions))
         self.q_network = DQN(self.actions,self.n_features,self.training,checkpoint_path=self.q_checkpoint_path,shared_replay_buffer=self.shared_replay_buffer)

@@ -1,4 +1,4 @@
-import pygame
+#import pygame
 
 class RenderPygame():
     def __init__(self, max_width, max_height):

@@ -32,7 +32,7 @@ class HarvestAgent(DQNAgent):
         self.norm_clipping_frequency = 10
         if agent_type == "rawlsian":
             self._rewards = self.get_rawlsian_rewards()
-            self.ethics_model = EthicsModule(model,self.unique_id,self._rewards["shaped_reward"])
+            self.ethics_model = EthicsModule(self.unique_id,self._rewards["shaped_reward"])
         else:
             self._rewards = self.get_baseline_rewards()
         self.off_grid = False
@@ -49,13 +49,13 @@ class HarvestAgent(DQNAgent):
                 have_berries = True
             else:
                 have_berries = False
-            min_days_left, min_agents, self_in_min = self.ethics_model.get_social_welfare()
+            min_days_left, min_agents, self_in_min = self.ethics_model.get_social_welfare(self.model.get_living_agents())
         reward = self._perform_action(action)
         next_state = self.observe()
-        #done, reward = self._update_attributes(reward) -> before or after ethics module?
+        done, reward = self._update_attributes(reward) 
         if self.agent_type == "rawlsian":
             reward += self.ethics_model.maximin(min_days_left, min_agents, self_in_min, have_berries)
-        done, reward = self._update_attributes(reward)
+        #done, reward = self._update_attributes(reward)
         if self.model.get_write_norms():
             self.norms_module.update_norm(antecedent, self.actions[action], reward)
             if self.model.get_day() % self.norm_clipping_frequency == 0:

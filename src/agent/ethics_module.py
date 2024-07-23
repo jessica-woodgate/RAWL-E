@@ -1,6 +1,5 @@
 class EthicsModule():
-    def __init__(self,model,unique_id,shaped_reward):
-        self.model = model
+    def __init__(self,unique_id,shaped_reward):
         self.unique_id = unique_id
         self.shaped_reward = shaped_reward
         
@@ -16,8 +15,8 @@ class EthicsModule():
                 return -self.shaped_reward
         return 0
     
-    def get_social_welfare(self):
-        ordered_agents = sorted(self.model.living_agents, key=lambda x: x.days_left_to_live, reverse=True)
+    def get_social_welfare(self, living_agents):
+        ordered_agents = sorted(living_agents, key=lambda x: x.days_left_to_live, reverse=True)
         min_agents = []
         self_in_min = False
         for a in ordered_agents:
