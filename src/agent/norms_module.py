@@ -66,7 +66,7 @@ class NormsModule():
         else:
             b = "high berries"
         view = ["IF", h, b]
-        agent_days = [a.days_left_to_live for a in self.model.schedule.agents if a.unique_id != self.agent_id and a.type != "berry"]
+        agent_days = [a.days_left_to_live for a in self.model.schedule.agents if a.unique_id != self.agent_id and a.agent_type != "berry"]
         for d in agent_days:
             if d < self.low_days_left_threshold:
                 view.append("low days")
