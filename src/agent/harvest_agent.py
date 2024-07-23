@@ -1,6 +1,7 @@
 from .dqn.dqn_agent import DQNAgent
-from .ethics_module import EthicsModule
+from .moving_module import MovingModule
 from .norms_module import NormsModule
+from .ethics_module import EthicsModule
 
 class HarvestAgent(DQNAgent):
     def __init__(self,unique_id,model,agent_type,min_width,max_width,min_height,max_height,n_features,training,epsilon,shared_replay_buffer=None):
@@ -24,6 +25,7 @@ class HarvestAgent(DQNAgent):
         self.berry_health_payoff = 0.6
         self.low_health_threshold = 0.6
         self.type = agent_type
+        self.moving_module = MovingModule(self.unique_id, model, training, max_width, max_height)
         self.norm_model = NormsModule(model,self.unique_id)
         self.norm_clipping_frequency = 10
         if agent_type == "rawlsian":
@@ -34,7 +36,7 @@ class HarvestAgent(DQNAgent):
         self.off_grid = False
         self.current_action = None
         
-    def execute_action(self, action):
+    def execute_transition(self, action):
         done = False
         self.current_action = action
         if self.model.write_norms:
@@ -46,10 +48,9 @@ class HarvestAgent(DQNAgent):
             else:
                 have_berries = False
             min_days_left, min_agents, self_in_min = self.ethics_model.get_social_welfare()
-        reward, x, y = self.move(action)
-        self.model.grid.move_agent(self, (x,y))
-        reward += self.forage((x,y))
+        reward = self._perform_action(action)
         next_state = self.model.observe(self)
+        #done, reward = self._update_attributes(reward) -> before or after ethics module?
         if self.type == "rawlsian":
             reward += self.ethics_model.maximin(min_days_left, min_agents, self_in_min, have_berries)
         done, reward = self.update_attributes(reward)
@@ -59,59 +60,40 @@ class HarvestAgent(DQNAgent):
                 self.norm_model.clip_norm_base()
         return reward, next_state, done
     
-    def move(self, action):
+    def _perform_action(self, action):
         x, y = self.pos
         reward = 0
         #action 0
-        if self.actions[action] == "north":
-            if (y + 1) < self.max_height:
-                y += 1
-            else:
-                reward = self.rewards["crash"]
+        if self.actions[action] == "move":
+            reward = self._move()
         #action 1
-        elif self.actions[action] == "east":
-            if (x + 1) < self.max_width:
-                x += 1
-            else:
-                reward = self.rewards["crash"]
-        #action 2
-        elif self.actions[action] == "south":
-            if (y - 1) >= self.min_height:
-                y -= 1
-            else:
-                reward = self.rewards["crash"]
-        #action 3
-        elif self.actions[action] == "west":
-            if (x - 1) >= self.min_width:
-                x -= 1
-            else:
-                reward = self.rewards["crash"]
-        #action 4
-        elif self.actions[action] == "throw":
-            reward = self.throw()
-        #action 5
         elif self.actions[action] == "eat":
-            reward = self.eat()
+            reward = self._eat()
+        #action 2
+        elif self.actions[action] == "throw":
+            reward = self._throw()
         return reward, x, y
 
-    def forage(self, cell):
-        #check if there is a berry at current location
-        location = self.model.grid.iter_cell_list_contents(cell)
-        for a in location:
-            if a.type == "berry":
-                if self.training or (not self.training and a.allocated_agent_id == self.unique_id):
-                    self.berries += 1
-                    self.model.spawn_berry(a)
-                    return self.rewards["forage"]
-        return self.rewards["empty_forage"]
+    def _move(self):
+        if not self.moving_module.check_nearest_berry(self.pos):
+            #if no berries have been found to walk towards, have to wait
+            return self._rewards["neutral_reward"]
+        #otherwise, we have a path, move towards the berry; returns True if we are at the end of the path and find a berry
+        berry_found, new_pos = self.moving_module.move_towards_berry(self.pos)
+        if berry_found:
+            self.berries += 1
+            return self._rewards["forage"]
+        if new_pos != self.pos:
+            self.model.move_agent(self, new_pos)
+        return self._rewards["neutral_reward"]
     
-    def throw(self):
+    def _throw(self):
         if self.berries <= 0:
             return self.rewards["no_berries"]
         #have to have a minimum amount of health to throw
         if self.health < self.low_health_threshold:
             return self.rewards["insufficient_health"]
-        benefactor = self.choose_benefactor()
+        benefactor = self._choose_benefactor()
         if not benefactor:
             return self.rewards["no_benefactor"]
         assert(benefactor.type != "berry")
@@ -122,14 +104,14 @@ class HarvestAgent(DQNAgent):
         self.berries_thrown += 1
         return self.rewards["throw"]
     
-    def choose_benefactor(self):
+    def _choose_benefactor(self):
         benefactor = [a for a in self.model.living_agents if a.unique_id != self.unique_id]
         if len(benefactor) > 0:
             return benefactor[0]
         else:
             return False
     
-    def eat(self):
+    def _eat(self):
         if self.berries > 0:
             self.health += self.berry_health_payoff
             self.berries -= 1

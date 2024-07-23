@@ -1,5 +1,5 @@
 import numpy as np
-from src.environment import HarvestModel
+from harvest_model import HarvestModel
 
 class BasicHarvest(HarvestModel):
     def __init__(self,num_baseline,num_rawlsian,max_episodes,training,write_data,write_norms,file_string=""):

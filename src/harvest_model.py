@@ -7,10 +7,12 @@ import json
 from .agent.harvest_agent import HarvestAgent
 from .berry import Berry
 from .harvest_exception import FileExistsException
+from .harvest_exception import AgentTypeException
 from .harvest_exception import OutOfBounds
 from .harvest_exception import NoEmptyCells
 from .harvest_exception import NumAgentsException
 from os.path import exists
+from abc import abstractmethod
 
 class HarvestModel(Model):
     def __init__(self,num_baseline,num_rawlsian,max_width,max_episodes,training,write_data,write_norms,file_string=""):
@@ -50,9 +52,11 @@ class HarvestModel(Model):
             self.epsilon = 0.05
         self.init_reporters()
 
+    @abstractmethod
     def init_berries(self):
         raise NotImplementedError
 
+    @abstractmethod
     def observe(self):
         raise NotImplementedError
     
@@ -80,6 +84,8 @@ class HarvestModel(Model):
         self.day += 1
         #check for dead agents
         for a in self.schedule.agents:
+            if a.agent_type == "berry" and a.foraged == True:
+                self._reset_berry(a, False)
             if a.type != "berry":
                 if self.num_living_agents == self.num_agents and a.off_grid == False:
                     self.collect_agent_data(a)
@@ -99,9 +105,8 @@ class HarvestModel(Model):
                     if self.write_norms and self.episode % 100 == 0:
                         self.append_norm_dictionary_to_file(a.norm_model.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
                     if self.training: 
-                        a.q_network.dqn.save(a.q_checkpoint_path)
-                        a.target_network.dqn.save(a.target_checkpoint_path)
-            self.reset()
+                        a.save_models()
+            self._reset()
     
     def get_emerged_norms(self):
         emergence_count = self.num_agents * self.societal_norm_emergence_threshold
@@ -131,39 +136,42 @@ class HarvestModel(Model):
             json.dump(norm_dictionary, file, indent=4)
             file.write(",")
 
-    def reset(self):
+    def _reset(self):
         self.living_agents = []
         self.emerged_norms_current = {}
         self.emerged_norms_history = {}
-        self.day = 0
+        self._day = 0
         num_agents = 0
         num_berries = 0
         self.episode += 1
         self.total_episode_reward = 0
-        self.clear_grid()
+        self._clear_grid()
         for a in self.schedule.agents:
-            if a.type != "berry":
-                a.done = False
-                a.total_episode_reward = 0
-                a.berries = 0
-                a.berries_consumed = 0
-                a.berries_thrown = 0
-                a.max_berries = 0
-                a.health = self.start_health
-                a.current_reward = 0
-                a.days_left_to_live = a.get_days_left_to_live()
-                a.days_survived = 0
-                a.norm_model.norm_base  = {}
-                self.place_agent_in_allotment(a)
-                a.off_grid = False
-                self.living_agents.append(a)
+            if a.agent_type != "berry":
+                self._reset_agent(a)
                 num_agents += 1
-            elif a.type == "berry":
-                self.place_agent_in_allotment(a)
+            elif a.agent_type == "berry":
+                self._reset_berry(a, True)
                 num_berries += 1
         assert num_agents == self.num_agents, "reset "+str(num_agents)+" agents instead of "+str(self.num_agents)
         assert num_berries == self.num_berries, "reset "+str(num_berries)+" berries instead of "+str(self.num_berries)
         self.num_living_agents = self.num_agents
+    
+    def _reset_agent(self, agent):
+        if agent.agent_type == "berry":
+            raise AgentTypeException(agent.agent_type, "berry")
+        agent.reset()
+        self.place_agent_in_allotment(agent)
+        agent.off_grid = False
+        self.living_agents.append(agent)
+    
+    def _reset_berry(self, berry, end_of_episode):
+        if berry.agent_type != "berry":
+            raise AgentTypeException("berry", berry.agent_type)
+        if not end_of_episode:
+            self.grid.remove_agent(berry)
+        berry.reset()
+        self.place_agent_in_allotment(berry)
 
     def init_reporters(self):
         self.agent_reporter = pd.DataFrame({"agent_id": [],
