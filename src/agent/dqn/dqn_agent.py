@@ -55,7 +55,7 @@ class DQNAgent(Agent):
         if self.done == False:
             observation = self.observe()
             assert(observation.size == self.n_features), f"expected {self.n_features}, got {observation.size}"
-            action = self.q_network.choose_action(observation,self.model.epsilon)
+            action = self.q_network.choose_action(observation,self.epsilon)
             self.current_reward, next_state, self.done = self.execute_transition(action)
             if self.training:
                 self._learn(observation, action, self.current_reward, next_state, self.done)

@@ -86,6 +86,7 @@ class HarvestModel(Model):
                     self._collect_agent_data(a)
                 if a.done == True and a.off_grid == False:
                     self._remove_agent(a)
+        self.epsilon = self.get_mean_epsilon()
         if self._write_norms:
             self.emerged_norms = self.get_emerged_norms()
         #if exceeded max days or all agents died, reset for new episode
@@ -164,7 +165,7 @@ class HarvestModel(Model):
                                "action": [],
                                "reward": [],
                                "num_norms": []})
-        if self.write_data:
+        if self.write_data and not self.training:
             if exists("data/results/agent_reports_"+self.file_string+".csv"):
                 raise FileExistsException("data/results/agent_reports_"+self.file_string+".csv")
             self.agent_reporter.to_csv("data/results/agent_reports_"+self.file_string+".csv", mode='a')
@@ -203,7 +204,7 @@ class HarvestModel(Model):
                                "reward": [agent.current_reward],
                                "num_norms": [len(agent.norms_module.norm_base) if self._write_norms else None]})
         self.agent_reporter = pd.concat([self.agent_reporter, new_entry], ignore_index=True)
-        if self.write_data:
+        if self.write_data and not self.training:
             new_entry.to_csv("data/results/agent_reports_"+self.file_string+".csv", header=None, mode='a')
 
     def _collect_model_episode_data(self):
