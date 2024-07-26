@@ -99,7 +99,7 @@ class HarvestModel(Model):
                     if a.off_grid == False:
                         a.days_survived = self._day
                     if self._write_norms and self.episode % 100 == 0:
-                        self.append_norm_dictionary_to_file(a.norms_module.norm_base, "dqn_results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
+                        self.append_norm_dictionary_to_file(a.norms_module.norm_base, "data/results/"+self.file_string+"_agent_"+str(a.unique_id)+"_norm_base")
                     if self.training: 
                         a.save_models()
             if self.write_data:

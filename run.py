@@ -12,6 +12,7 @@ AGENT_TYPES = ["baseline", "rawlsian"]
 NUM_AGENTS = 4
 NUM_START_BERRIES = NUM_AGENTS * 3
 MAX_WIDTH = NUM_AGENTS * 2
+MAX_ALLOTMENT_WIDTH = NUM_AGENTS * 4
 MAX_HEIGHT = MAX_WIDTH
 
 def generate_graphs(scenario):
@@ -147,9 +148,15 @@ elif args.option == "test" or args.option == "train":
     else:
         log_wandb = False
     if agent_type == "all":
-        run_all(scenario,NUM_AGENTS,NUM_START_BERRIES,MAX_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
+        if scenario == "allotment":
+            run_all(scenario,NUM_AGENTS,NUM_START_BERRIES,MAX_ALLOTMENT_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
+        else:
+            run_all(scenario,NUM_AGENTS,NUM_START_BERRIES,MAX_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
     else:
-        create_and_run_model(scenario,NUM_AGENTS,NUM_START_BERRIES,agent_type,MAX_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
+        if scenario == "allotment":
+            create_and_run_model(scenario,NUM_AGENTS,NUM_START_BERRIES,agent_type,MAX_ALLOTMENT_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
+        else:
+            create_and_run_model(scenario,NUM_AGENTS,NUM_START_BERRIES,agent_type,MAX_WIDTH,MAX_HEIGHT,max_episodes,training,write_data,write_norms,render,log_wandb)
 #########################################################################################
 elif args.option == "generate_graphs":
     scenario = input("What type of scenario do you want to generate graphs for (capabilities, allotment): ")
