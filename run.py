@@ -22,7 +22,8 @@ def generate_graphs(scenario):
     e_epochs are run for at most t_max steps; results are normalised by frequency of step
     """
     data_analysis = DataAnalysis()
-    path = "data/"+scenario+"/"
+    #path = "data/"+scenario+"/"
+    path = "data/current_run/agent_reports_"+scenario+"/"
     files = [path+"baseline.csv",path+"rawlsian.csv"]
     labels = AGENT_TYPES
     dfs = []
@@ -95,7 +96,7 @@ def write_data_input(data_type):
         write_data = input("Invalid choice. Please choose 'y' or 'n': ")
     if write_data == "y":
         write_data = True
-        print(f"{data_type} will be written into data/results.")
+        print(f"{data_type} will be written into data/current_run.")
     elif write_data == "n":
         write_data = False
     return write_data
@@ -162,5 +163,5 @@ elif args.option == "graphs":
     scenario = input("What type of scenario do you want to generate graphs for (capabilities, allotment): ")
     while scenario not in ["capabilities", "allotment"]:
         scenario = input("Invalid scenario. Please choose 'capabilities', or 'allotment': ")
-    print("Graphs will be saved in data/results")
+    print("Graphs will be saved in data/current_run")
     generate_graphs(scenario)
