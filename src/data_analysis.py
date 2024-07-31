@@ -29,15 +29,15 @@ class DataAnalysis():
             df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
             #Calculate counts for each (step, agent_id) combination
             count_df = df.groupby(["day", "agent_id"]).size().reset_index(name="count")
+            count_df['count'] = count_df['count']
             #Sum and normalize by count
             sum_df = df.groupby(["day", "agent_id"]).sum().reset_index()
-            sum_df = sum_df.reset_index(drop=True)
-            count_df = count_df.reset_index(drop=True)
+            sum_df = sum_df.astype(float)
             to_divide_columns = list(sum_df.columns)
             to_divide_columns.remove("day")
             to_divide_columns.remove("agent_id")
+            sum_df.loc[:, to_divide_columns] = sum_df.loc[:, to_divide_columns]
             sum_df.loc[:, to_divide_columns] = sum_df.loc[:, to_divide_columns].divide(count_df["count"], axis=0)
-            #sum_df = sum_df.divide(count_df["count"], axis=0)
             sum_df["count"] = count_df["count"]
             return sum_df
 
@@ -92,6 +92,7 @@ class DataAnalysis():
                 palette=colors,
                 ax=ax,
                 legend=False,
+                cut=0
             )
 
             plt.xlabel("Society")

@@ -14,6 +14,7 @@ NUM_START_BERRIES = NUM_AGENTS * 3
 MAX_WIDTH = NUM_AGENTS * 2
 MAX_ALLOTMENT_WIDTH = NUM_AGENTS * 4
 MAX_HEIGHT = MAX_WIDTH
+MAX_TEST_EPISODES = 2000
 
 def generate_graphs(scenario, num_agents):
     """
@@ -23,8 +24,8 @@ def generate_graphs(scenario, num_agents):
     """
     data_analysis = DataAnalysis(num_agents)
     #path = "data/"+scenario+"/"
-    #path = "data/current_run/agent_reports_"+scenario+"/"
-    path = "data/results/run_1/run_1_allotment/agent_reports_"+scenario+"_"
+    path = "data/current_run/agent_reports_"+scenario+"_"
+    #path = "data/results/run_1/run_1_"+scenario+"/agent_reports_"+scenario+"_"
     files = [path+"baseline.csv",path+"rawlsian.csv"]
     labels = AGENT_TYPES
     dfs = []
@@ -142,7 +143,8 @@ elif args.option == "test" or args.option == "train":
         print("Model variables will be written into model_variables/current_run")
         max_episodes = 0
     else:
-        max_episodes = get_integer_input("How many episodes do you want to run: ")
+        #max_episodes = get_integer_input("How many episodes do you want to run: ")
+        max_episodes = MAX_TEST_EPISODES
         training = False
     #########################################################################################
     if args.log is not None:

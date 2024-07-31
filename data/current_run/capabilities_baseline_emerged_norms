@@ -1,507 +1,1344 @@
 
 "1"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 9,
-        "numerosity": 53,
-        "fitness": 0.003644999999999999,
+        "score": 8,
+        "numerosity": 36,
+        "fitness": 1.4038893981529535e-23,
         "num_instances": 4
     },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+    "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 7,
+        "fitness": 1.2007570823759913e-18,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,medium days,low days,low days,THEN,eat": {
+        "score": 10,
+        "numerosity": 9,
+        "fitness": 5.021793101968375e-11,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
         "score": 4,
-        "numerosity": 16,
-        "fitness": 0.0007217115496819558,
+        "numerosity": 11,
+        "fitness": 5.0518747282019156e-24,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 32,
+        "fitness": 5.4034068706919605e-19,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 5,
+        "numerosity": 19,
+        "fitness": 0.0014580000030022277,
         "num_instances": 4
     }
 },"2"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 10,
-        "numerosity": 44,
-        "fitness": 1.2400289999999995e-05,
+        "score": 7,
+        "numerosity": 53,
+        "fitness": 9.414330894052984e-12,
         "num_instances": 4
     },
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 1,
-        "numerosity": 12,
-        "fitness": 4.649045867999997e-10,
+    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 7,
+        "fitness": 0.001458000000001235,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 11,
+        "fitness": 0.002916000000847288,
         "num_instances": 4
     }
 },"3"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 9,
-        "numerosity": 33,
-        "fitness": 9.447839999999997e-05,
+        "score": 6,
+        "numerosity": 24,
+        "fitness": 7.625597930768061e-12,
         "num_instances": 4
     },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 5,
-        "numerosity": 20,
-        "fitness": 0.001095416286963912,
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 13,
+        "fitness": 1.913187599999999e-07,
         "num_instances": 4
     },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 17,
-        "fitness": 8.647427547975249e-16,
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 5,
+        "fitness": 0.0,
         "num_instances": 4
     }
 },"4"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 25,
-        "fitness": 0.0029159999999999993,
+        "score": 9,
+        "numerosity": 45,
+        "fitness": 6.973568802000048e-10,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 22,
+        "fitness": 3.1981162786199984e-05,
         "num_instances": 4
     }
 },"5"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 22,
-        "fitness": 9.15071698198439e-13,
-        "num_instances": 4
-    },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 10,
-        "numerosity": 33,
-        "fitness": 4.743217213199998e-05,
-        "num_instances": 4
-    },
-    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
-        "score": 10,
-        "numerosity": 10,
-        "fitness": 0.0064384332299999986,
+        "score": 6,
+        "numerosity": 26,
+        "fitness": 8.503056000000001e-06,
         "num_instances": 4
     }
 },"6"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 7,
-        "numerosity": 31,
-        "fitness": 0.6000000077484114,
+        "score": 8,
+        "numerosity": 30,
+        "fitness": 2.168033780489537e-16,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 8,
+        "fitness": 0.0003936599999999999,
         "num_instances": 4
     }
 },"7"{
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 1,
-        "numerosity": 16,
-        "fitness": 7.174453499999997e-08,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
-        "score": 3,
-        "numerosity": 15,
-        "fitness": 3.4867955191211307e-10,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 5,
-        "numerosity": 17,
-        "fitness": 2.1257640000000485e-05,
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 12,
+        "fitness": 0.6000127545839999,
         "num_instances": 4
     }
 },"8"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 10,
-        "numerosity": 43,
-        "fitness": 3.446698157642634e-21,
+        "score": 5,
+        "numerosity": 20,
+        "fitness": 0.003645000000030196,
         "num_instances": 4
     },
-    "IF,low health,medium berries,low days,low days,medium days,THEN,eat": {
-        "score": 7,
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 11,
+        "fitness": 1.2914016299999991e-08,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,medium days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 10,
+        "fitness": 1.0628823765727148e-05,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 17,
+        "fitness": 0.0002624411622614669,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 12,
+        "fitness": 5.457914760529802e-06,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
         "numerosity": 7,
-        "fitness": 0.00017714854968195595,
+        "fitness": 1.4348906999999993e-07,
         "num_instances": 4
     }
 },"9"{
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 5,
-        "numerosity": 27,
-        "fitness": 4.50316019270117e-19,
+        "numerosity": 30,
+        "fitness": 9.081234408683875e-09,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,medium days,low days,low days,THEN,eat": {
+        "score": 4,
+        "numerosity": 4,
+        "fitness": 0,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
         "score": 4,
-        "numerosity": 18,
-        "fitness": 7.412179232497573e-17,
+        "numerosity": 12,
+        "fitness": 2.8242953668362755e-11,
         "num_instances": 4
     },
-    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
-        "score": 2,
+    "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 18,
+        "fitness": 5.3299181167414576e-06,
+        "num_instances": 4
+    }
+},"10"{
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 19,
+        "fitness": 5.165606520000292e-09,
+        "num_instances": 4
+    }
+},"11"{
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 13,
+        "fitness": 1.1809799999999995e-05,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 0,
+        "numerosity": 7,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"12"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 30,
+        "fitness": 3.602271247127974e-17,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 17,
+        "fitness": 6.485329056167104e-20,
+        "num_instances": 4
+    }
+},"13"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 17,
+        "fitness": 1.4348906999999995e-05,
+        "num_instances": 4
+    }
+},"14"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
         "numerosity": 16,
-        "fitness": 3.584030817943887e-14,
+        "fitness": 0.6,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
         "score": 2,
-        "numerosity": 18,
-        "fitness": 3.0018927059399786e-18,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,medium days,medium days,THEN,move": {
-        "score": 5,
-        "numerosity": 8,
-        "fitness": 0.78,
+        "numerosity": 11,
+        "fitness": 5.137262999999998e-06,
         "num_instances": 4
     }
-},"10"{
+},"15"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 12,
-        "numerosity": 38,
-        "fitness": 1.0050571827685919e-23,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 0,
-        "numerosity": 8,
-        "fitness": 0.0,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 0,
-        "numerosity": 15,
-        "fitness": 0.0,
-        "num_instances": 4
-    }
-},"11"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 22,
-        "fitness": 3.1886601214768225e-06,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 3,
-        "numerosity": 18,
-        "fitness": 0.0010935000000838813,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 2,
-        "numerosity": 10,
-        "fitness": 0.000131220209207064,
-        "num_instances": 4
-    }
-},"12"{
-    "IF,low health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 9,
-        "fitness": 2.125826762119217e-06,
-        "num_instances": 4
-    },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 7,
-        "numerosity": 17,
-        "fitness": 0.0005780302987278238,
+        "score": 8,
+        "numerosity": 35,
+        "fitness": 9.29809173600011e-10,
         "num_instances": 4
     },
     "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
         "score": 9,
         "numerosity": 9,
-        "fitness": 0.036243944099999995,
+        "fitness": 4.366659378239998e-07,
         "num_instances": 4
     },
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 7,
-        "numerosity": 40,
-        "fitness": 4.782969000002429e-07,
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 27,
+        "fitness": 0.0009330726149999998,
         "num_instances": 4
     }
-},"13"{
+},"16"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 22,
-        "fitness": 0.6,
+        "score": 5,
+        "numerosity": 27,
+        "fitness": 8.753519130520976e-21,
         "num_instances": 4
     },
     "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 9,
+        "fitness": 3.936600000005558e-05,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 19,
+        "fitness": 1.2552423863052255e-11,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
         "score": 3,
-        "numerosity": 8,
-        "fitness": 0.20429999999999998,
+        "numerosity": 13,
+        "fitness": 3.1639721214874227e-09,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 15,
+        "fitness": 6.973568801999996e-10,
+        "num_instances": 4
+    }
+},"17"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 40,
+        "fitness": 0.60001594323,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 10,
+        "fitness": 2.510484768719998e-11,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 14,
+        "fitness": 0.0014592754631071586,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 16,
+        "fitness": 4.782968999999997e-07,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
         "score": 1,
-        "numerosity": 12,
-        "fitness": 0.0014579999999999997,
+        "numerosity": 7,
+        "fitness": 0.0162,
         "num_instances": 4
     },
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 0,
-        "numerosity": 6,
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 12,
         "fitness": 0.0,
         "num_instances": 4
     }
-},"14"{
+},"18"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 5,
+        "fitness": 0.0,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 5,
+        "numerosity": 28,
+        "fitness": 1.6511816119102092e-15,
+        "num_instances": 4
+    }
+},"19"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 18,
+        "fitness": 0.6000000000013217,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 24,
+        "fitness": 7.625610858418997e-14,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
         "score": 6,
-        "numerosity": 30,
-        "fitness": 5.648590730232742e-11,
+        "numerosity": 22,
+        "fitness": 1.5943230274521584e-06,
+        "num_instances": 4
+    }
+},"20"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 36,
+        "fitness": 6.903833114354207e-11,
         "num_instances": 4
     },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 5,
-        "numerosity": 14,
-        "fitness": 0.600000639356366,
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 25,
+        "fitness": 1.035574967096999e-11,
         "num_instances": 4
     },
-    "IF,low health,medium berries,medium days,medium days,low days,THEN,eat": {
-        "score": 5,
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 12,
+        "fitness": 1.0628820389515514e-06,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 8,
+        "fitness": 0.0,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,medium days,low days,low days,THEN,eat": {
+        "score": 8,
+        "numerosity": 8,
+        "fitness": 0.0008748000000109807,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 4,
         "numerosity": 4,
         "fitness": 0,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
-        "score": 1,
-        "numerosity": 8,
-        "fitness": 0.18,
-        "num_instances": 4
-    }
-},"15"{},"16"{
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 0,
-        "numerosity": 10,
-        "fitness": 0.0,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 1,
-        "numerosity": 8,
-        "fitness": 0.004859999999999999,
-        "num_instances": 4
-    }
-},"17"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 4,
-        "numerosity": 29,
-        "fitness": 3.602271247127974e-17,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 3,
-        "numerosity": 13,
-        "fitness": 0.00013122000000000003,
-        "num_instances": 4
-    },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 7,
-        "fitness": 2.125763999999999e-06,
-        "num_instances": 4
-    }
-},"18"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 2,
-        "numerosity": 15,
-        "fitness": 5.083731656657995e-12,
+        "numerosity": 10,
+        "fitness": 3.188646068630376e-07,
         "num_instances": 4
     },
     "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 3,
-        "numerosity": 15,
-        "fitness": 3.8127987424934964e-13,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 6,
+        "score": 5,
         "numerosity": 17,
-        "fitness": 0.0004373999999999999,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
-        "score": 1,
-        "numerosity": 4,
-        "fitness": 0,
-        "num_instances": 4
-    }
-},"19"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 37,
-        "fitness": 3.389160741746679e-12,
-        "num_instances": 4
-    },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 19,
-        "fitness": 5.043326988684598e-05,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 2,
-        "numerosity": 10,
-        "fitness": 0.05400000000000036,
-        "num_instances": 4
-    }
-},"20"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 11,
-        "numerosity": 41,
-        "fitness": 0.004859999999999999,
+        "fitness": 4.619912874441626e-20,
         "num_instances": 4
     }
 },"21"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 24,
+        "fitness": 0.2700000000000175,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
         "score": 3,
-        "numerosity": 32,
-        "fitness": 4.1917668786849844e-10,
+        "numerosity": 15,
+        "fitness": 1.5941578281371988e-11,
         "num_instances": 4
     },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 7,
-        "numerosity": 25,
-        "fitness": 0.003112871324852159,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 2,
-        "numerosity": 17,
-        "fitness": 8.135830269000047e-10,
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 6,
+        "fitness": 0.0,
         "num_instances": 4
     }
 },"22"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 8,
-        "numerosity": 40,
-        "fitness": 0.0486,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 1,
-        "numerosity": 5,
-        "fitness": 0.0014579999999999997,
-        "num_instances": 4
-    },
-    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 2,
-        "numerosity": 7,
-        "fitness": 1.913187599999999e-07,
+        "numerosity": 27,
+        "fitness": 0.009720000000027382,
         "num_instances": 4
     }
 },"23"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 6,
-        "numerosity": 24,
-        "fitness": 8.85735001338292e-06,
+        "score": 9,
+        "numerosity": 33,
+        "fitness": 5.3402380325999975e-06,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 12,
+        "fitness": 0.6,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 1,
-        "numerosity": 9,
-        "fitness": 0.0,
+        "score": 3,
+        "numerosity": 11,
+        "fitness": 7.62559821444692e-14,
         "num_instances": 4
     }
 },"24"{
-    "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 18,
-        "fitness": 7.659329239205854e-21,
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 44,
+        "fitness": 2.6322926215367877e-23,
         "num_instances": 4
     },
-    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
-        "score": 5,
-        "numerosity": 14,
-        "fitness": 0.0014580000002541863,
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 23,
+        "fitness": 3.4867844009999977e-09,
         "num_instances": 4
     },
-    "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
-        "score": 3,
-        "numerosity": 25,
-        "fitness": 3.510961676060496e-18,
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 6,
+        "numerosity": 6,
+        "fitness": 8.472886094429992e-12,
         "num_instances": 4
     }
 },"25"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 8,
-        "numerosity": 40,
-        "fitness": 6.317502291688291e-24,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
-        "score": 2,
-        "numerosity": 8,
-        "fitness": 2.3914844999999985e-07,
+        "score": 7,
+        "numerosity": 27,
+        "fitness": 2.657205000140828e-05,
         "num_instances": 4
     }
 },"26"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 4,
-        "numerosity": 23,
-        "fitness": 0.6000025509168,
-        "num_instances": 4
-    }
-},"27"{
-    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 8,
-        "numerosity": 47,
-        "fitness": 6.5089417550727854e-24,
+        "score": 7,
+        "numerosity": 44,
+        "fitness": 1.8612170051270218e-22,
         "num_instances": 4
     },
     "IF,low health,no berries,low days,low days,low days,THEN,move": {
         "score": 6,
-        "numerosity": 14,
-        "fitness": -0.10799678036036087,
+        "numerosity": 22,
+        "fitness": 0.0009848196156599996,
+        "num_instances": 4
+    }
+},"27"{
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 17,
+        "fitness": 2.1523360499999994e-08,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 17,
+        "fitness": 2.5418658301015855e-13,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 12,
+        "fitness": 0.6014580000001779,
         "num_instances": 4
     }
 },"28"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 8,
-        "numerosity": 39,
-        "fitness": 3.874204890000009e-09,
-        "num_instances": 4
-    },
-    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 8,
-        "fitness": 3.1385177431641864e-11,
+        "score": 10,
+        "numerosity": 32,
+        "fitness": 1.9941610769218093e-23,
         "num_instances": 4
     }
 },"29"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 7,
-        "numerosity": 31,
-        "fitness": 2.125763999999999e-05,
+        "score": 2,
+        "numerosity": 8,
+        "fitness": 0.0006560999999999997,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 21,
+        "fitness": 4.3046721000405234e-08,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
-        "score": 3,
-        "numerosity": 15,
-        "fitness": 7.085880000023346e-06,
+        "score": 8,
+        "numerosity": 27,
+        "fitness": 1.810681642368876e-19,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 5,
+        "numerosity": 27,
+        "fitness": 1.522019639765688e-17,
         "num_instances": 4
     }
 },"30"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 8,
-        "numerosity": 50,
-        "fitness": 1.2238613247515349e-11,
+        "numerosity": 30,
+        "fitness": 3.4589710191900995e-14,
         "num_instances": 4
     },
-    "IF,low health,no berries,low days,low days,low days,THEN,move": {
-        "score": 5,
-        "numerosity": 20,
-        "fitness": 0.5854208035387919,
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 0,
+        "numerosity": 14,
+        "fitness": 0.0,
         "num_instances": 4
     }
 },"31"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 48,
+        "fitness": 1.9765548809510255e-15,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
         "score": 6,
-        "numerosity": 24,
-        "fitness": 0.2700000000169458,
+        "numerosity": 28,
+        "fitness": 0.0011641401000838812,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 6,
+        "fitness": 0.0,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 6,
+        "numerosity": 6,
+        "fitness": 0.002916000000338915,
         "num_instances": 4
     }
 },"32"{
     "IF,medium health,no berries,low days,low days,low days,THEN,move": {
-        "score": 2,
-        "numerosity": 8,
-        "fitness": 0.6008747999999999,
+        "score": 6,
+        "numerosity": 28,
+        "fitness": 3.886400391745192e-19,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 3.151987341236977e-18,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 14,
+        "fitness": 2.06801889458558e-23,
+        "num_instances": 4
+    }
+},"33"{
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 0,
+        "numerosity": 9,
+        "fitness": 0.0,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 12,
+        "fitness": 1.6297523999999993e-05,
+        "num_instances": 4
+    }
+},"34"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 6,
+        "numerosity": 34,
+        "fitness": 1.3130278695781464e-20,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 24,
+        "fitness": 3.1921404099984835e-06,
+        "num_instances": 4
+    }
+},"35"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 7,
+        "numerosity": 30,
+        "fitness": 1.3400762436914558e-23,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 15,
+        "fitness": 5.314410000003002e-06,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 16,
+        "fitness": 1.0331213053341738e-08,
+        "num_instances": 4
+    }
+},"36"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 34,
+        "fitness": 4.518873634358443e-11,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 0.6058319999999999,
+        "num_instances": 4
+    }
+},"37"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 44,
+        "fitness": 7.753298267071995e-24,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 12,
+        "fitness": -0.025839,
+        "num_instances": 4
+    }
+},"38"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 45,
+        "fitness": 0.03240023914845,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 1.9452264734491058e-20,
+        "num_instances": 4
+    }
+},"39"{},"40"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 34,
+        "fitness": 4.6490482014328267e-08,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 11,
+        "fitness": 0.003178440232452293,
+        "num_instances": 4
+    }
+},"41"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 39,
+        "fitness": 8.136177193840982e-24,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 8,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"42"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 7,
+        "numerosity": 44,
+        "fitness": 2.7894275208492364e-10,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 11,
+        "numerosity": 11,
+        "fitness": 1.0905169319999996e-06,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 27,
+        "fitness": 1.5510991319999994e-05,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 7,
+        "fitness": 3.7657271530799964e-12,
+        "num_instances": 4
+    }
+},"43"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 11,
+        "numerosity": 44,
+        "fitness": 9.739482699686115e-24,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 8,
+        "fitness": 0.0014579999999999997,
+        "num_instances": 4
+    }
+},"44"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 16,
+        "fitness": 4.066985325326396e-12,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 14,
+        "fitness": 0.016200000008491186,
+        "num_instances": 4
+    }
+},"45"{
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 21,
+        "fitness": 2.632292621536788e-25,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 1.2998975908823648e-22,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 11,
+        "fitness": 0.0014579999999999997,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 12,
+        "numerosity": 12,
+        "fitness": 0.009729565938010979,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 12,
+        "numerosity": 40,
+        "fitness": 9.567478562651067e-06,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 6,
+        "fitness": 2.188379782630244e-21,
+        "num_instances": 4
+    }
+},"46"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 38,
+        "fitness": 1.2922163778453324e-23,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 24,
+        "fitness": 0.002916007089794948,
+        "num_instances": 4
+    }
+},"47"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 11,
+        "numerosity": 43,
+        "fitness": 7.748409780000003e-09,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 0,
+        "numerosity": 6,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"48"{
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 10,
+        "fitness": 0.0006560999999999998,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 15,
+        "fitness": 1.9695418043672192e-22,
+        "num_instances": 4
+    }
+},"49"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 17,
+        "fitness": 0.0013122054238868456,
+        "num_instances": 4
+    }
+},"50"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 2.367125606519999e-05,
+        "num_instances": 4
+    }
+},"51"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 42,
+        "fitness": 7.004636051012946e-10,
+        "num_instances": 4
+    }
+},"52"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 35,
+        "fitness": 0.0010935054238868458,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 17,
+        "fitness": 6.86303773691903e-15,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 6,
+        "fitness": 0.6,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 12,
+        "fitness": 7.627821109213614e-14,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 0,
+        "numerosity": 16,
+        "fitness": 0.0,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 6,
+        "fitness": 0.6,
+        "num_instances": 4
+    }
+},"53"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 21,
+        "fitness": 6.119306623754994e-11,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 8,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"54"{
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 4,
+        "numerosity": 17,
+        "fitness": 3.3902662498948797e-13,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 17,
+        "fitness": 0.18,
+        "num_instances": 4
+    },
+    "IF,medium health,medium berries,low days,medium days,medium days,THEN,eat": {
+        "score": 6,
+        "numerosity": 6,
+        "fitness": 4.0525551530189704e-19,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 21,
+        "fitness": 1.696018456810661e-12,
+        "num_instances": 4
+    }
+},"55"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 22,
+        "fitness": 8.40035818946167e-15,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 13,
+        "fitness": 4.0025236079199715e-18,
+        "num_instances": 4
+    }
+},"56"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 47,
+        "fitness": 3.835462841100047e-10,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 4,
+        "numerosity": 10,
+        "fitness": 1.1622614781181203e-09,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 25,
+        "fitness": 9.574090776041184e-06,
+        "num_instances": 4
+    }
+},"57"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 48,
+        "fitness": 8.184037059687106e-24,
+        "num_instances": 4
+    }
+},"58"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 38,
+        "fitness": 8.92581464756702e-22,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 10,
+        "fitness": 4.785986584612342e-24,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 11,
+        "fitness": 1.1479125599999993e-07,
+        "num_instances": 4
+    }
+},"59"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 36,
+        "fitness": 5.814973700303996e-24,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 5,
+        "numerosity": 5,
+        "fitness": 0.0324,
+        "num_instances": 4
+    }
+},"60"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 37,
+        "fitness": 1.2400754910887064e-05,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 14,
+        "fitness": 7.873210460353227e-05,
+        "num_instances": 4
+    }
+},"61"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 17,
+        "fitness": 9.565937999999997e-06,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 6,
+        "numerosity": 17,
+        "fitness": 5.669179842829461e-11,
+        "num_instances": 4
+    }
+},"62"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 27,
+        "fitness": 0.00045926999999999985,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 11,
+        "fitness": 0.09369,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 8,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"63"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 27,
+        "fitness": 3.152478486200919e-12,
+        "num_instances": 4
+    }
+},"64"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 51,
+        "fitness": 2.871591950767405e-23,
+        "num_instances": 4
+    }
+},"65"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 46,
+        "fitness": 7.968667663379549e-24,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 7,
+        "numerosity": 19,
+        "fitness": 7.745731317359995e-07,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 9,
+        "numerosity": 9,
+        "fitness": 0.009737378120699998,
+        "num_instances": 4
+    }
+},"66"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 25,
+        "fitness": 0.27,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 6,
+        "fitness": 3.0018927059399783e-19,
+        "num_instances": 4
+    }
+},"67"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 7,
+        "numerosity": 28,
+        "fitness": 3.542940001976553e-05,
+        "num_instances": 4
+    }
+},"68"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 9,
+        "numerosity": 55,
+        "fitness": 1.0507094548575937e-20,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 10,
+        "numerosity": 25,
+        "fitness": 0.0008750672297392956,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 10,
+        "numerosity": 10,
+        "fitness": 0.0011532219720488996,
+        "num_instances": 4
+    }
+},"69"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 7,
+        "numerosity": 23,
+        "fitness": 2.5942282643925744e-14,
+        "num_instances": 4
+    }
+},"70"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 24,
+        "fitness": 0.009720000000017498,
+        "num_instances": 4
+    }
+},"71"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 27,
+        "fitness": 1.914394633844937e-24,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 24,
+        "fitness": -0.10799999999935181,
+        "num_instances": 4
+    }
+},"72"{
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 5,
         "numerosity": 20,
-        "fitness": 0.0014580000000000033,
+        "fitness": 6.360940782744295e-11,
+        "num_instances": 4
+    }
+},"73"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 41,
+        "fitness": 2.5418658903695646e-13,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 15,
+        "fitness": 4.257339307334998e-06,
+        "num_instances": 4
+    }
+},"74"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 8,
+        "numerosity": 33,
+        "fitness": 5.551744438150317e-24,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 13,
+        "fitness": 9.841500000000248e-05,
+        "num_instances": 4
+    }
+},"75"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 10,
+        "fitness": 0.60001062882,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 17,
+        "fitness": 1.554980421676909e-17,
         "num_instances": 4
     },
     "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 20,
+        "fitness": 1.0382646302034602e-20,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
+        "score": 2,
+        "numerosity": 22,
+        "fitness": 1.5098683020274243e-14,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 3,
+        "numerosity": 11,
+        "fitness": 0.0001968300011310907,
+        "num_instances": 4
+    }
+},"76"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 22,
+        "fitness": 0.6000000000000407,
+        "num_instances": 4
+    }
+},"77"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
         "score": 4,
-        "numerosity": 15,
-        "fitness": 7.748413486040373e-09,
+        "numerosity": 31,
+        "fitness": 4.783002044255765e-07,
+        "num_instances": 4
+    },
+    "IF,low health,medium berries,low days,low days,low days,THEN,eat": {
+        "score": 4,
+        "numerosity": 4,
+        "fitness": 0,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 8,
+        "fitness": 0.0015895069781399996,
+        "num_instances": 4
+    }
+},"78"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 20,
+        "fitness": 9.065639442599994e-09,
+        "num_instances": 4
+    }
+},"79"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 21,
+        "fitness": 2.963766740849998e-09,
+        "num_instances": 4
+    }
+},"80"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 9,
+        "fitness": 2.058911320946488e-15,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 2,
+        "numerosity": 11,
+        "fitness": 5.9048999999999997e-05,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,medium days,THEN,move": {
+        "score": 4,
+        "numerosity": 17,
+        "fitness": 6.19789730641634e-16,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 12,
+        "fitness": 0.007289999999999998,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,medium days,THEN,move": {
+        "score": 5,
+        "numerosity": 16,
+        "fitness": 3.828312302445179e-06,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 5,
+        "numerosity": 18,
+        "fitness": 0.0029160000000411778,
+        "num_instances": 4
+    }
+},"81"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 6,
+        "numerosity": 27,
+        "fitness": 0.6000000000000175,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 8,
+        "fitness": 0.0,
+        "num_instances": 4
+    }
+},"82"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 18,
+        "fitness": 0.6000000018596183,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,low days,medium days,THEN,move": {
+        "score": 1,
+        "numerosity": 9,
+        "fitness": 1.6412848369726828e-22,
+        "num_instances": 4
+    },
+    "IF,low health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 14,
+        "fitness": -0.004859999999999999,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 11,
+        "fitness": 1.1622614669999994e-09,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 3,
+        "numerosity": 13,
+        "fitness": 2.130413045867999e-06,
+        "num_instances": 4
+    }
+},"83"{
+    "IF,medium health,no berries,low days,low days,low days,THEN,move": {
+        "score": 5,
+        "numerosity": 20,
+        "fitness": 0.002187000000010706,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,medium days,low days,low days,THEN,move": {
+        "score": 4,
+        "numerosity": 16,
+        "fitness": 5.904900001144048e-05,
+        "num_instances": 4
+    },
+    "IF,medium health,no berries,low days,medium days,low days,THEN,move": {
+        "score": 1,
+        "numerosity": 12,
+        "fitness": 0.0004373999999999999,
         "num_instances": 4
     }
 },
