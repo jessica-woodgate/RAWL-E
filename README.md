@@ -1,5 +1,5 @@
-# PriNE
-Principles for (ethical) norm emergence using reinforcement learning in multi-agent systems
+# RAWL-E
+Operationalising Rawlsian ethics in reinforcement learning agents for fair norm emergence in multi-agent systems.
 
 Create virtual environment using: 
 
@@ -8,7 +8,3 @@ Create virtual environment using:
 To run:
 
 `run.py [train] [test] [generate_graphs]`
-
-## UML Diagram
-
-![UML Diagram of PriNE](PriNE.drawio.png "UML Diagram")
