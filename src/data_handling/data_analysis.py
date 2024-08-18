@@ -66,7 +66,6 @@ class DataAnalysis():
         to_divide_columns.remove("day")
         to_divide_columns.remove("agent_id")
         sum_df.loc[:, to_divide_columns] = sum_df.loc[:, to_divide_columns].divide(count_df["count"], axis=0)
-        #sum_df = sum_df.divide(count_df["count"], axis=0)
         sum_df["count"] = count_df["count"]
         return sum_df
 
@@ -125,9 +124,9 @@ class DataAnalysis():
 
     def _display_swarm_plot(self, df_list, df_labels, column, filename):
         fig, ax = plt.subplots()
-        # Combine the DataFrames and add labels
+        #combine the DataFrames and add labels
         combined_df = pd.concat([df.assign(label=label) for df, label in zip(df_list, df_labels)])
-        # Plot the swarm plot with reduced marker size
+        #plot the swarm plot with reduced marker size
         sns.swarmplot(data=combined_df, x=column, y='label', ax=ax, size=3, hue='label')  # Adjust size as needed
         plt.xlabel(column)
         plt.ylabel('Society')
@@ -227,20 +226,3 @@ class DataAnalysis():
             return (x_series.mean() - y_series.mean()) / np.sqrt(((nx-1)*x_series.std() ** 2 + (ny-1)*y_series.std() ** 2) / dof)
         else:
             return (x_series.mean() - y_series.mean()) / np.sqrt((x_series.std() ** 2 + y_series.std() ** 2) / 2.0)
-
-    def _create_norms_dataframe(self, filename, write_name=None):
-        norms_data = []
-        with open(filename, 'r') as file:
-            data = json.load(file)
-        # Iterate through each episode key (e.g., "100")
-        for episode, rules in data.items():
-            for rule in rules:
-                # Extract attributes from each rule dictionary
-                attributes = rule.popitem()[1]  # Get first key-value pair (rule name and its dictionary)
-                attributes['episode'] = episode  # Add episode information
-                norms_data.append(attributes)  # Append extracted attributes to data list
-        # Create DataFrame from the data list
-        df = pd.DataFrame(norms_data)
-        if write_name != None:
-            df.to_csv(write_name+".csv")
-        return df

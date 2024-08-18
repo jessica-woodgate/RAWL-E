@@ -12,7 +12,6 @@ class NormProcessing():
         data = json.load(f)
         cooperative_data = self._count_cooperative_norms(data, output_file)
         data = self._merge_norms(data, output_file)
-        #self._generate_norms_tree(data, output_file)
         return cooperative_data
     
     def _count_cooperative_norms(self, data, output_file):
@@ -32,51 +31,6 @@ class NormProcessing():
         df = pd.DataFrame(cooperative_norms)
         df.to_csv(output_file+"_cooperative_data.csv")
         return df
-
-    def _generate_norms_tree(self, data, output_file):
-        """
-        Processes a list of dictionaries representing norms and prints the tree structure to a file.
-
-        Args:
-            data: A list of dictionaries where each dictionary represents a norm (IF,x,y,z,THEN,a) with its information.
-            output_file: The path to the file where the tree structure will be printed.
-        """
-        tree = {}
-        for norm in data:
-            conditions = norm.split("IF")[1].split(",")[:-2]
-            conditions = conditions[1:]
-            current_node = tree
-            for condition in conditions:
-                if condition not in current_node:
-                    current_node[condition] = {}
-                current_node = current_node[condition]
-            consequent = norm.split("THEN")[1].strip(",")
-            if isinstance(current_node, list):
-                current_node.append(consequent)
-            else:
-                current_node[condition] = [consequent]
-        with open(output_file+".txt", 'w') as f:
-            f.write(self._print_tree(tree, indent="  "))
-
-    def _print_tree(self, node, indent=""):
-        """
-        Recursively prints the tree structure to a string with indentation.
-
-        Args:
-            node: A node of the tree structure (dictionary).
-            indent: The indentation string for current level.
-
-        Returns:
-            A string representation of the tree with indentation.
-        """
-        output = ""
-        for key, value in node.items():
-            if isinstance(value, dict):
-                output += f"{indent}{key}\n"
-                output += self._print_tree(value, indent + "  ")
-            else:
-                output += f"{indent}{key}: {value}\n"
-        return output
 
     def _merge_norms(self,data,output_file):
         """
