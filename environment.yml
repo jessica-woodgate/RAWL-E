@@ -6,6 +6,6 @@ dependencies:
   - pandas
   - seaborn
   - matplotlib
-  - tensorflow
+  - tensorflow=2.16.1
   - numpy
-  - conda-forge::mesa
+  - mesa
