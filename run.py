@@ -10,27 +10,27 @@ import numpy as np
 
 AGENT_TYPES = ["baseline", "maximin"]
 SCENARIO_TYPES = ["capabilities", "allotment"]
-NUM_AGENTS_OPTIONS = ["2", "4", "6"]
+NUM_AGENTS_OPTIONS = ["2", "4"]
 MAX_EPISODES = 2000
 MAX_DAYS = 50
-RESULTS_FILEPATH = "data/results/current_run/"
 RUN_OPTIONS = ["current_run", "pretrained"]
 
-def generate_graphs(scenario, num_agents):
+def generate_graphs(scenario, run_name, num_agents):
     """
     takes raw files and generates graphs displayed in the paper
     processed dfs contain data for each agent at the end of each episode
     e_epochs are run for at most t_max steps; results are normalised by frequency of step
     """
-    data_analysis = DataAnalysis(num_agents, RESULTS_FILEPATH)
-    path = RESULTS_FILEPATH+"agent_reports_"+scenario+"_"
-    files = [path+"baseline.csv",path+"egalitarian.csv",path+"maximin.csv",path+"utilitarian.csv"]
-    files = [path+"baseline.csv",path+"maximin.csv",path+"utilitarian.csv"]
+    writing_filepath = "data/results/current_run/"
+    data_analysis = DataAnalysis(num_agents, writing_filepath)
+    reading_filepath = "data/results/"+run_name+"/"+str(num_agents)+"_agents/"+scenario+"/agent_reports_"+scenario+"_"
+    norms_filepath = "data/results/"+run_name+"/"+str(num_agents)+"_agents/"+scenario+"/"+scenario
+    files = [reading_filepath+"baseline.csv",reading_filepath+"maximin.csv"]
     dfs = []
     for file in files:
         df = pd.read_csv(file)
         dfs.append(df)
-    data_analysis.proccess_and_display_all_data(scenario, dfs, AGENT_TYPES)
+    data_analysis.proccess_and_display_all_data(dfs, AGENT_TYPES, scenario, norms_filepath)
 
 def log_wandb_agents(model_inst, last_episode, reward_tracker):
     for i, agent in enumerate(model_inst.schedule.agents):
@@ -172,9 +172,8 @@ elif args.option == "test" or args.option == "train":
         create_and_run_model(scenario,run_name,num_agents,NUM_BERRIES,agent_type,MAX_WIDTH,MAX_HEIGHT,max_episodes,MAX_DAYS,training,write_data,write_norms,render,log_wandb)
 #########################################################################################
 elif args.option == "graphs":
-    scenario = input("What type of scenario do you want to generate graphs for (capabilities, allotment): ")
-    while scenario not in ["capabilities", "allotment"]:
-        scenario = input("Invalid scenario. Please choose 'capabilities', or 'allotment': ")
+    run_name = get_input(f"What run do you want to generate graphs for {RUN_OPTIONS}: ", f"Invalid name of run. Please choose {RUN_OPTIONS}: ", RUN_OPTIONS)
+    scenario = get_input("What type of scenario do you want to generate graphs for (capabilities, allotment): ", "Invalid scenario. Please choose 'capabilities', or 'allotment': ", ["capabilities", "allotment"])
     num_agents = int(get_input(f"How many agents do you want to implement {NUM_AGENTS_OPTIONS}: ", f"Invalid number of agents. Please choose {NUM_AGENTS_OPTIONS}: ", NUM_AGENTS_OPTIONS))
     print("Graphs will be saved in data/results/current_run")
-    generate_graphs(scenario,num_agents)
+    generate_graphs(scenario,run_name,num_agents)

@@ -55,11 +55,11 @@ class HarvestAgent(DQNAgent):
         self.low_health_threshold = 0.6
         self.agent_type = agent_type
         self.write_norms = write_norms
-        self.moving_module = MovingModule(self.unique_id, model, training, max_width, max_height)
+        self.moving_module = MovingModule(self.unique_id, model, training, min_width, max_width, min_height, max_height)
         self.norms_module = NormsModule(self.unique_id)
         if agent_type != "baseline":
             self.rewards = self._ethics_rewards()
-            self.ethics_module = EthicsModule(self.unique_id,self.rewards["sanction"])
+            self.ethics_module = EthicsModule(self.rewards["sanction"])
         else:
             self.rewards = self._baseline_rewards()
         self.off_grid = False

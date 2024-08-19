@@ -17,10 +17,10 @@ class DataAnalysis():
         self.num_agents = num_agents
         self.filepath = filepath
     
-    def proccess_and_display_all_data(self, scenario, agent_df_list, df_labels, norm_df_list=None):
-        normalised_sum_df_list, agent_end_episode_list = self._process_agent_dfs(agent_df_list, df_labels)
-        self._display_graphs(normalised_sum_df_list, agent_end_episode_list, df_labels)
-        self._process_norms(scenario, df_labels)
+    def proccess_and_display_all_data(self, agent_df_list, df_labels, scenario, norms_filepath):
+        # normalised_sum_df_list, agent_end_episode_list = self._process_agent_dfs(agent_df_list, df_labels)
+        # self._display_graphs(normalised_sum_df_list, agent_end_episode_list, df_labels)
+        self._process_norms(df_labels, scenario, norms_filepath)
 
     def _process_agent_dfs(self, agent_df_list, df_labels):
         normalised_sum_df_list = self._apply_function_to_list(agent_df_list, self._normalised_sum_step_across_episodes)
@@ -35,17 +35,16 @@ class DataAnalysis():
         self._display_violin_plot_df_list(agent_end_episode_list, df_labels, "day", self.filepath+"violin_end_day", "Violin Plot of Episode Length", "End Day")
         self._display_violin_plot_df_list(agent_end_episode_list, df_labels, "total_berries", self.filepath+"violin_total_berries", "Violin Plot of Total Berries Consumed", "Berries Consumed")
 
-    def _process_norms(self,scenario, df_labels):
-        scenario_file = self.filepath+scenario
+    def _process_norms(self, df_labels, scenario, filepath):
         norm_processing = NormProcessing()
         cooperative_dfs = []
         for label in df_labels:
-            input_file = scenario_file+"_"+label+"_emerged_norms.json"
-            output_file = scenario_file+"_"+label+"_processed_norms"
+            input_file = filepath+"_"+label+"_emerged_norms.json"
+            output_file = self.filepath+scenario+"_"+label+"_norms"
             cooperative_dfs.append(norm_processing.proccess_norms(input_file, output_file))
-        self._display_swarm_plot(cooperative_dfs,df_labels, "numerosity", scenario_file+"_cooperative_numerosity")
-        self._display_swarm_plot(cooperative_dfs,df_labels, "fitness", scenario_file+"_cooperative_fitness")
-        self._display_swarm_plot(cooperative_dfs,df_labels, "reward", scenario_file+"_cooperative_reward")
+        self._display_swarm_plot(cooperative_dfs,df_labels, "numerosity", filepath+"_cooperative_numerosity")
+        self._display_swarm_plot(cooperative_dfs,df_labels, "fitness", filepath+"_cooperative_fitness")
+        self._display_swarm_plot(cooperative_dfs,df_labels, "reward", filepath+"_cooperative_reward")
 
     def _write_df_list_to_file(self, df_list, df_labels, filepath):
         i = 0
@@ -58,16 +57,18 @@ class DataAnalysis():
         df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
         #Calculate counts for each (step, agent_id) combination
         count_df = df.groupby(["day", "agent_id"]).size().reset_index(name="count")
-        #Sum and normalize by count
+        count_df['count'] = count_df['count']
+        #Sum and normalise by count
         sum_df = df.groupby(["day", "agent_id"]).sum().reset_index()
-        sum_df = sum_df.reset_index(drop=True)
-        count_df = count_df.reset_index(drop=True)
+        sum_df = sum_df.astype(float)
         to_divide_columns = list(sum_df.columns)
         to_divide_columns.remove("day")
         to_divide_columns.remove("agent_id")
+        sum_df.loc[:, to_divide_columns] = sum_df.loc[:, to_divide_columns]
         sum_df.loc[:, to_divide_columns] = sum_df.loc[:, to_divide_columns].divide(count_df["count"], axis=0)
         sum_df["count"] = count_df["count"]
         return sum_df
+
 
     def _process_end_episode_dataframes(self, dataframes):
         processed_dfs = []
