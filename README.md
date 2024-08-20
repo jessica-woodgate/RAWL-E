@@ -7,4 +7,4 @@ Create virtual environment using:
 
 To run:
 
-`run.py [train] [test] [generate_graphs]`
+`run.py [train] [test] [graphs]`
