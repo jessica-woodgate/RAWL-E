@@ -78,7 +78,7 @@ class HarvestAgent(DQNAgent):
         self.current_action = action
         society_well_being = self.model.get_society_well_being(self, True)
         if self.write_norms:
-            antecedent = self.norms_module.get_antecedent(self.health, self.berries, society_well_being)
+            antecedent = self.norms_module.get_antecedent(self.berries, self.health, society_well_being)
         if self.agent_type != "baseline":
             self.ethics_module.day = self.model.get_day()
             can_help = self._update_ethics(society_well_being)

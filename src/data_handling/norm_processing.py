@@ -12,7 +12,8 @@ class NormProcessing():
         data = json.load(f)
         cooperative_data = self._count_cooperative_norms(data, output_file)
         data = self._merge_norms(data, output_file)
-        self._generate_norms_tree(data, output_file)
+        self._generalise_norms(data.keys(), output_file)
+        #self._generate_norms_tree(data, output_file)
         return cooperative_data
     
     def _count_cooperative_norms(self, data, output_file):
@@ -33,6 +34,43 @@ class NormProcessing():
         df.to_csv(output_file+"_cooperative_data.csv")
         return df
     
+    def _generalise_norms(self, norms, output_file):
+        rule_dict = {}
+        for rule in norms:
+            conditions, action = rule.split("THEN")
+            conditions = conditions.split(",")[1:]
+            rule_dict[tuple(conditions)] = action.strip()
+        def merge_rules(rule_dict):
+            merged_rules = {}
+            for conditions, action in rule_dict.items():
+                if conditions in merged_rules:
+                    continue
+                generalized_conditions = []
+                for i in range(len(conditions)):
+                    shorter_conditions = conditions[:i] + conditions[i+1:]
+                    if tuple(shorter_conditions) in rule_dict and rule_dict[tuple(shorter_conditions)] == action:
+                        generalized_conditions = shorter_conditions
+                        break
+                if generalized_conditions:
+                    merged_rules[tuple(generalized_conditions)] = action
+                else:
+                    merged_rules[conditions] = action
+            return merged_rules
+        merged_rules = merge_rules(rule_dict)
+        merged_rules = self._convert_to_rule_list(merged_rules)
+        self._generate_norms_tree(merged_rules, output_file)
+    
+    def _convert_to_rule_list(self, data):
+        rule_list = []
+        for conditions, action in data.items():
+            rule = ["IF"]
+            rule.extend(conditions[:-1])
+            rule.append("THEN")
+            rule.append(action.strip(","))
+            rule_string = ", ".join(rule)
+            rule_list.append(rule_string)
+        return rule_list
+        
     def _generate_norms_tree(self, data, output_file):
         tree = {}
         for norm in data:
